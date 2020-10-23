@@ -1,0 +1,15 @@
+#nprogress .bar {
+    height: 4px !important;
+    background: rgb(228,99,99);
+background: linear-gradient(51deg, rgba(228,99,99,1) 8%, rgba(249,249,142,1) 98%);
+}
+
+.ql-editor {
+    min-height: 300px;
+}
+
+.featured-image {
+    width: 50%;
+    max-height: 500px;
+    object-fit: cover;
+}

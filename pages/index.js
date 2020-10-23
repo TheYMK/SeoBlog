@@ -1,65 +1,114 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import Link from 'next/link';
+import '../styles/homepage.module.css';
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	return (
+		<Layout>
+			<article className="overflow-hidden">
+				<div className="container">
+					<div className="row">
+						<div className="col-md-12 text-center">
+							<h1 className="display-4 font-weight-bold">
+								PROGRAMMING & WEB DEVELOPMENT BLOGS/TUTORIALS
+							</h1>
+						</div>
+					</div>
+				</div>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+				<div className="container">
+					<div className="row">
+						<div className="col-md-12 text-center pt-4 pb-5">
+							<p className="lead">
+								Best programming and web development blogs and tutorials on React Node NextJs and
+								JavaScript
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="container-fluid">
+					<div className="row">
+						<div className="col-md-4">
+							<div className="flip flip-horizontal">
+								<div
+									className="front"
+									style={{
+										backgroundImage:
+											'url(' +
+											'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' +
+											')'
+									}}
+								>
+									<h2 className="text-shadow text-center h1">Front End</h2>
+								</div>
+								<div className="back text-center">
+									<Link href="/categories/frontend">
+										<a>
+											<h3 className="h1">Front End</h3>
+										</a>
+									</Link>
+									<p className="lead">
+										Discover what our users are saying about front end technologies
+									</p>
+								</div>
+							</div>
+						</div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+						<div className="col-md-4">
+							<div className="flip flip-horizontal">
+								<div
+									className="front"
+									style={{
+										backgroundImage:
+											'url(' +
+											'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' +
+											')'
+									}}
+								>
+									<h2 className="text-shadow text-center h1">Back End</h2>
+								</div>
+								<div className="back text-center">
+									<Link href="/categories/backend">
+										<a>
+											<h3 className="h1">Back End</h3>
+										</a>
+									</Link>
+									<p className="lead">
+										Discover what our users are saying about back end technologies
+									</p>
+								</div>
+							</div>
+						</div>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+						<div className="col-md-4">
+							<div className="flip flip-horizontal">
+								<div
+									className="front"
+									style={{
+										backgroundImage:
+											'url(' +
+											'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' +
+											')'
+									}}
+								>
+									<h2 className="text-shadow text-center h1">Full Stack</h2>
+								</div>
+								<div className="back text-center">
+									<Link href="/categories/fullstack">
+										<a>
+											<h3 className="h1">Full Stack</h3>
+										</a>
+									</Link>
+									<p className="lead">
+										Discover what our users are saying about full stack technologies
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</Layout>
+	);
 }

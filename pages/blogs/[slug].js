@@ -78,6 +78,7 @@ const SingleBlog = ({ blog, params }) => {
 
 	// Disqus
 	const showComments = () => {
+		console.log(blog.title);
 		return (
 			<div>
 				<DisqusThread id={blog._id} title={blog.title} path={`/blog/${blog.slug}`} />
@@ -145,21 +146,21 @@ const SingleBlog = ({ blog, params }) => {
 };
 
 // This function gets called at build time
-export async function getStaticPaths() {
-	return listAllBlogs().then((data) => {
-		if (data.error) {
-			console.log(data.error);
-		} else {
-			const paths = data.map((blog) => ({
-				params: { slug: blog.slug }
-			}));
+// export async function getStaticPaths() {
+// 	return listAllBlogs().then((data) => {
+// 		if (data.error) {
+// 			console.log(data.error);
+// 		} else {
+// 			const paths = data.map((blog) => ({
+// 				params: { slug: blog.slug }
+// 			}));
 
-			return { paths, fallback: true };
-		}
-	});
-}
+// 			return { paths, fallback: true };
+// 		}
+// 	});
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
 	return listSingleBlog(params.slug).then((data) => {
 		if (data.error) {
 			console.log(data.error);
@@ -175,5 +176,3 @@ export async function getStaticProps({ params }) {
 }
 
 export default SingleBlog;
-
-// ykrtlfwqvmipgirh
